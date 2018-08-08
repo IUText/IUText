@@ -7,10 +7,31 @@
 
 int main()
 {
-    char username[100];
-    printf("Enter username\n");
-    gets(username);
-    directories(username);
-    userlist(username);
-    files();
+    printf("1. Sign up.\n2. Log in.\n");
+    int op;
+    scanf("%d", &op);
+    if ( op == 1 )
+    {
+        char username[100];
+        printf("Enter username\n");
+        gets(username);
+        if ( duplicate_checker(username) == 0 ) /*DEPENDS ON DUPLICATE_CHECKER FUNCTION RETURN VALUE */
+        {
+            printf("Username taken. Please try again.\n");
+            return;
+        }
+        else
+        {
+            directories(username);
+            userlist(username);
+            files();
+        }
+    }
+    else if ( op == 2 )
+    {
+        char username[100];
+        printf("Enter username\n");
+        gets(username);
+        /* USERAUTH HERE */
+    }
 }
