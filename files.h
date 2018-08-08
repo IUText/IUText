@@ -1,4 +1,4 @@
-/* TODO: Include check to make sure the same file isn't being created twice. Fixed using append mode maybe?? */
+/* files.h: Create individual user files for storing texts. No duplicates generated. */
 
 void files()
 {
@@ -29,23 +29,6 @@ void files()
     {
         userlist[i][0] = NULL;
     }
-    /* File Creation segment
-    for ( i = 0 ; userlist[i][0] != NULL ; i++ )
-    {
-        //printf("IN FILE CREATION SEGMENT");
-        char temp[100];
-        strcat(temp, userlist[i]);
-        printf("Detected username: ");
-        puts(temp);
-        strcat(temp, ".txt");
-        FILE *z;
-        z = fopen(temp, "a");
-        fclose(z);
-        for ( j = 0 ; temp[j] != NULL ; j++ )
-        {
-            temp[j] = NULL;
-        }
-    }*/
     for ( i = 0 ; userlist[i][0] != NULL ; i++ )
     {
         char temp[100] = "";
@@ -54,7 +37,7 @@ void files()
         chdir(temp);
         printf("Successfully entered %s folder.\n", temp);
         system("pwd");
-        /* FIX THIS SHIT */
+        /* FIXED */
         for ( j = 0 ; userlist[j][0] != NULL ; j++ )
         {
             printf("Comparison with ");
