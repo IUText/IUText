@@ -1,4 +1,4 @@
-/* directories.h: to create user folders */
+/* directories.h: To create user folders */
 
 void directories(char *name)
 {

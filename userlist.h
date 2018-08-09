@@ -1,5 +1,3 @@
-/* TODO: Include check for repetition of usernames */
-
 void userlist(char *name)
 {
     FILE *f;
