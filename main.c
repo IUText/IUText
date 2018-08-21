@@ -7,6 +7,7 @@
 #include "userauth.h"
 #include "usercred.h"
 #include "store_message.h"
+#include "view_message.h"
 
 
 int main()
@@ -70,7 +71,10 @@ int main()
             scanf("%d", &subop);
             if ( subop == 2 )
             {
-                printf("OOPS. PLACEHOLDER.\n");
+                printf("Enter name of user whose messages you want to view.\n");
+                char toview[100];
+                scanf(" %s", &toview);
+                view_messages(username, toview);
                 return;
             }
             else if ( subop ==1 )
