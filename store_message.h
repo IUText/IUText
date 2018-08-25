@@ -11,6 +11,7 @@ void store_in_sender(char *sender,char *receiver,char *message)
     strcat(name,": " );
     strcat(name,message);
     strcat(name,"\n");
+    encrypt(name);
     //SENDER ER PART TA START
     //strcat(direct,"/");//THIK EI JAYGAAY ROOT DIRECTORY BOSHAYE DIBI//
     strcat(direct,sender);

@@ -12,7 +12,10 @@ void view_messages(char* username, char* toview)
     {
         char c;
         c = fgetc(f);
-        printf("%c", c);
+        if ( c == 10)
+            printf("%c", c);
+        else
+            printf("%c", c+2);
     }
     printf("END OF TEXT MESSAGES.\n");
     fclose(f);

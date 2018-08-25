@@ -8,6 +8,7 @@
 #include "usercred.h"
 #include "store_message.h"
 #include "view_message.h"
+#include "encrypt.h"
 
 
 int main()
@@ -97,6 +98,7 @@ int main()
                 char text[10000];
                 getchar();
                 gets(text);
+                //encrypt(text);
                 store_in_sender(sender, receiver, text);
                 printf("Done.\n");
             }
