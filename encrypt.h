@@ -1,6 +1,6 @@
 void encrypt(char *text)
 {
-    printf("Encrypting.\n");
+    printf("Encrypting...\n");
     int i;
     for ( i = 0 ; text[i] !=  NULL ; i++ )
     {
