@@ -18,6 +18,15 @@
 
 int main()
 {
+    printf(" ___                              ___         ___                     ___  \n");
+    printf("  |            |   |               |         |            \\ /          |   \n");
+    printf("  +            |   |               +         |-+-          +           +   \n");
+    printf("  |            |   |               |         |            / \\          |   \n");
+    printf(" ---            ---                           ---                          \n");
+    printf("                                                                        \n");
+    printf("\nEnter any key to continue...\n");
+    int c = getchar();
+    system(CLEAR);
     while (1)
     {
         int flag = 0;
