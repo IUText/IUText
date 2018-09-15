@@ -52,7 +52,7 @@ int main()
                 printf("Enter password\n");
                 scanf(" %s", &password);
                 directories(username);
-                userlist(username);
+                userenlist(username);
                 usercred(username, password);
                 printf("Account for %s created.\n", username);
                 int z = getchar();
@@ -70,6 +70,10 @@ int main()
             if ( username_check(username) == 0 )
             {
                 printf("Username doesn't exist. Try again.\n");
+                int z = getchar();
+                printf("Enter any key to continue...\n");
+                int c = getchar();
+                system(CLEAR);
             }
             else if  ( ( username_check(username) ) == 1 )
             {
@@ -104,6 +108,7 @@ int main()
                     scanf("%d", &subop);
                     if ( subop == 2 )
                     {
+                        disp_users();
                         printf("Enter name of user whose messages you want to view.\n");
                         char toview[100];
                         scanf(" %s", &toview);
@@ -123,6 +128,7 @@ int main()
                     }
                     else if ( subop == 1 )
                     {
+                        disp_users();
                         char sender[100];
                         strcpy(sender, username);
                         printf("Enter name of receiver.\n");
@@ -139,6 +145,7 @@ int main()
                             printf("Enter any key to continue...\n");
                             int c = getchar();
                             system(CLEAR);
+                            continue;
                         }
                         printf("Enter message.\n");
                         char text[10000];
