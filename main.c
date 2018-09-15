@@ -107,7 +107,15 @@ int main()
                         printf("Enter name of user whose messages you want to view.\n");
                         char toview[100];
                         scanf(" %s", &toview);
-                        view_messages(username, toview);
+                        if ( ( username_check(toview) ) == 1 )
+                        {
+                            printf("Sender found.\n");
+                            view_messages(username, toview);
+                        }
+                        else
+                        {
+                            printf("Sender not found.\n");
+                        }
                         int z = getchar();
                         printf("Enter any key to continue...\n");
                         int c = getchar();
