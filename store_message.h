@@ -18,7 +18,7 @@ void store_in_sender(char *sender,char *receiver,char *message)
     strcat(direct,"/");
     strcat(receiver,".txt");
     strcat(direct,receiver);
-    puts(direct);
+    //puts(direct);
     FILE *fptr;
     fptr = fopen(direct, "a");
     if(fptr == NULL)
@@ -35,7 +35,7 @@ void store_in_sender(char *sender,char *receiver,char *message)
     strcat(paabeje,"/");
     strcat(Fsender,".txt");
     strcat(paabeje,Fsender);
-    puts(paabeje);
+    //puts(paabeje);
 
 
    f = fopen(paabeje, "a");

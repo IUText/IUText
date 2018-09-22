@@ -78,7 +78,7 @@ int main()
             }
             else if  ( ( username_check(username) ) == 1 )
             {
-                printf("Username found in userlist.txt.\n");
+                printf("Username found in userlist.\n");
                 printf("Please enter password.\n");
                 scanf(" %s", &password);
                 if ( ( userauth(username, password) ) == 1 )
@@ -159,7 +159,7 @@ int main()
                         }
                         char rectemp[1000];
                         strcpy(rectemp, receiver);
-                        printf("RECTEMP = %s\n", rectemp);
+                        //printf("RECTEMP = %s\n", rectemp);
                         printf("Enter message.\n");
                         char text[10000];
                         getchar();

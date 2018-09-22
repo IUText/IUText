@@ -17,6 +17,6 @@ void view_messages(char* username, char* toview)
         else
             printf("%c", c+2);
     }
-    printf("END OF TEXT MESSAGES.\n");
+    //printf("END OF TEXT MESSAGES.\n");
     fclose(f);
 }
