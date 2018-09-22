@@ -1,7 +1,7 @@
 void view_messages(char* username, char* toview)
 {
     char command[1000];
-    strcat(command, username);
+    strcpy(command, username);
     strcat(command, "/");
     strcat(command, toview);
     strcat(command, ".txt");
