@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "notifs.h"
 #include "directories.h"
 #include "userlist.h"
 #include "username_check.h"
@@ -103,10 +104,10 @@ int main()
             {
                 while(1)
                 {
-                    printf("1. Send message.\n2. View message.\n3. Logout.\n");
+                    printf("1. View notifications.\n2. Send message.\n3. View message.\n4. Logout.\n");
                     int subop;
                     scanf("%d", &subop);
-                    if ( subop == 2 )
+                    if ( subop == 3 )
                     {
                         disp_users();
                         printf("Enter name of user whose messages you want to view.\n");
@@ -128,6 +129,15 @@ int main()
                     }
                     else if ( subop == 1 )
                     {
+                        viewnotifs(username);
+                        char subsubop;
+                        printf("Do you wish to delete notifications you have viewed? Y/N");
+                        scanf(" %c", &subsubop);
+                        if ( subsubop == 'Y' )
+                            notifsdel(username);
+                    }
+                    else if ( subop == 2 )
+                    {
                         disp_users();
                         char sender[100];
                         strcpy(sender, username);
@@ -147,17 +157,21 @@ int main()
                             system(CLEAR);
                             continue;
                         }
+                        char rectemp[1000];
+                        strcpy(rectemp, receiver);
+                        printf("RECTEMP = %s\n", rectemp);
                         printf("Enter message.\n");
                         char text[10000];
                         getchar();
                         gets(text);
                         store_in_sender(sender, receiver, text);
+                        newnotifs(sender, rectemp);
                         printf("Done.\n");
                         printf("Enter any key to continue...\n");
                         int c = getchar();
                         system(CLEAR);
                     }
-                    else if ( subop == 3 )
+                    else if ( subop == 4 )
                     {
                         system(CLEAR);
                         break;
