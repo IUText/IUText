@@ -7,30 +7,39 @@ void userenlist(char *name)
     fclose(f);
 }
 
-void disp_users()
+char* disp_users(char users[100][100])
 {
     FILE *f;
     f = fopen("userlist.txt", "rb");
-    int i = 1, flag = 1;
+    int i = 0, j = 0, flag = 1;
     while ( flag == 1 )
     {
-        printf("%d. ", i);
+        //printf("%d. ", i);
         char ch;
         while ( !feof(f) )
         {
             char ch = fgetc(f);
             if ( ch == ' ' )
+            {
+                users[i][j] = '\0';
+                i++;
+                j = 0;
                 break;
+            }
             else
-                printf("%c", ch);
+            {
+                users[i][j] = ch;
+                j++;
+            }
         }
-        printf("\n");
+        //printf("\n");
         if (feof(f))
         {
             flag = 0;
             break;
         }
-        i++;
+        //i++;
     }
+    return *users;
     fclose(f);
 }

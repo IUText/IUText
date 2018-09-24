@@ -5,7 +5,7 @@ void view_messages(char* username, char* toview)
     strcat(command, "/");
     strcat(command, toview);
     strcat(command, ".txt");
-    puts(command);
+//    puts(command);
     FILE *f;
     f = fopen(command, "r");
     while ( !feof(f) )

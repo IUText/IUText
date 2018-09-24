@@ -104,15 +104,24 @@ int main()
             {
                 while(1)
                 {
+                    char users[100][100]; //POPULATE THIS CHARACTER ARRAY WITH USERS FROM USERLIST
                     printf("1. View notifications.\n2. Send message.\n3. View message.\n4. Logout.\n");
                     int subop;
                     scanf("%d", &subop);
                     if ( subop == 3 )
                     {
-                        disp_users();
-                        printf("Enter name of user whose messages you want to view.\n");
+                        disp_users(users);
+                        int k;
+                        for ( k = 0 ; users[k][0] != '\0' ; k++ )
+                        {
+                            printf("%d. %s\n", k+1, users[k]);
+                        }
+                        printf("Select user whose messages you want to view.\n");
+                        int view;
+                        scanf("%d", &view);
                         char toview[100];
-                        scanf(" %s", &toview);
+                        strcpy(toview, users[view-1]);
+                        puts(toview);
                         if ( ( username_check(toview) ) == 1 )
                         {
                             printf("Sender found.\n");
@@ -138,12 +147,20 @@ int main()
                     }
                     else if ( subop == 2 )
                     {
-                        disp_users();
+                        disp_users(users);
+                        int k;
+                        for ( k = 0 ; users[k][0] != '\0' ; k++ )
+                        {
+                            printf("%d. %s\n", k+1, users[k]);
+                        }
                         char sender[100];
                         strcpy(sender, username);
-                        printf("Enter name of receiver.\n");
+                        printf("Select receiver.\n");
+                        int send;
+                        scanf("%d", &send);
                         char receiver[100];
-                        scanf(" %s", receiver);
+                        strcpy(receiver, users[send-1]);
+                        puts(receiver);
                         if ( ( username_check(receiver) ) == 1 )
                         {
                             printf("Receiver found.\n");
